@@ -1,0 +1,71 @@
+.navbar {
+  position: relative; /* Ensures proper positioning */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: #333; /* Dark background color */
+  color: white; /* Text color */
+  margin-top: 1px; /* Moves navbar below the top */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+  border-radius: 0; /* Removes rounding to fill the width */
+  width: 100%; /* Ensures full width */
+  left: 0; /* Aligns with the left edge */
+  right: 0; /* Aligns with the right edge */
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 15px; /* Space between links */
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #00bcd4; /* Change color on hover */
+}
+
+.navbar-search {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.navbar-search input {
+  width: 80%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.navbar-buttons button {
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-buttons button:hover {
+  background-color: #008c99; /* Darker shade on hover */
+}
