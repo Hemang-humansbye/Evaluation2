@@ -16,6 +16,8 @@ app.use(express.json()); // For parsing JSON
 // Database connection
 connectDB();
 
+
+
 // Root route
 app.get("/", (req, res) => {
   res.send("Welcome to the Bookstore API! Use /api/books to fetch books.");
@@ -23,6 +25,29 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/api/books", bookRoutes);
+mongoose.connect("mongodb://127.0.0.1:27017/employee");
+
+app.post("/login", (req, res) => {
+    const {email, password} = req.body;
+    EmployeeModel.findOne({email : email})
+    .then(user => {
+        if(user) {
+            if(user.password === password){
+                res.json("Success")
+            }else{
+                res.json("The password is incorrect")
+            }
+        }else{
+            res.json("No record existed")
+        }
+    })
+})
+
+app.post("/register", (req, res) => {
+    EmployeeModel.create(req.body)
+    .then(employees => res.json(employees))
+    .catch(err => res.json(err))
+})
 
 // Error handler
 app.use(errorHandler);
